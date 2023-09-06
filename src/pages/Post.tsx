@@ -10,9 +10,10 @@ export type TListItem = {
 interface ListItemProps {
   activePost: TListItem;
   onClick: any;
+  openEditForm: any;
 }
 
-export const Post = ({ activePost, onClick }: ListItemProps) => {
+export const Post = ({ activePost, onClick, openEditForm }: ListItemProps) => {
   const { id, content, created } = activePost;
 
   const navigate = useNavigate();
@@ -29,7 +30,12 @@ export const Post = ({ activePost, onClick }: ListItemProps) => {
       <div className="post-view__created">{created}</div>
       <div className="buttons">
         <Link to={`/posts/${id}/edit`}>
-          <button className="post-view__edit button-submit">Изменить</button>
+          <button
+            className="post-view__edit button-submit"
+            onClick={openEditForm}
+          >
+            Изменить
+          </button>
         </Link>
         <button
           className="post-view__delete button-cancel"

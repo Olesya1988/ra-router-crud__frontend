@@ -132,6 +132,13 @@ export default function App() {
     readPost(target.closest("li").id);
   };
 
+  // При открытии формы редактирования (например, в компоненте Post)
+  const openEditForm = () => {
+    // Заполните состояние formEdit значением текста поста для редактирования
+    setFormEdit({ content: activePost.content });
+    // Здесь также можно показать форму редактирования, например, изменяя роут или состояние для отображения формы
+  };
+
   return (
     <>
       <Routes>
@@ -153,7 +160,11 @@ export default function App() {
           <Route
             path="/posts/:id"
             element={
-              <Post activePost={activePost} onClick={onDeletePostHandler} />
+              <Post
+                activePost={activePost}
+                onClick={onDeletePostHandler}
+                openEditForm={openEditForm}
+              />
             }
           />
           <Route

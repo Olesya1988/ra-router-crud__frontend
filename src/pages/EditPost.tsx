@@ -17,12 +17,12 @@ export const EditPost = ({ title, onChange, onSubmit, content }: FormProps) => {
       <div className="post-view__close" onClick={handleClose}>
         &#10006;
       </div>
-      <input
+      <textarea
         className={`${title}__input`}
         onChange={onChange}
         name="content"
         value={content}
-      />
+      ></textarea>
       <div className="buttons">
         <button className="button-submit">Сохранить</button>
         <button className="button-cancel" onClick={handleClose}>

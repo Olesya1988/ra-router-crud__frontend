@@ -17,13 +17,13 @@ export const AddPost = ({ title, onChange, onSubmit, content }: FormProps) => {
       <div className={`${title}__close`} onClick={handleClose}>
         &#10006;
       </div>
-      <input
+      <textarea
         className={`${title}__input`}
         placeholder="Введите текст..."
         onChange={onChange}
         name="content"
         value={content}
-      ></input>
+      ></textarea>
       <div className={`${title}__submit-contaiter`}>
         <button
           className={`${title}__submit button-submit`}
